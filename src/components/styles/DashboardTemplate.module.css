@@ -3,6 +3,10 @@
   transition: margin-left 0.3s ease;
 }
 
+.layoutFull {
+  margin-left: 60px; /* Lebar sidebar saat collapsed */
+}
+
 .content {
   padding: 24px;
   background-color: #f3f4f6;
@@ -10,8 +14,8 @@
   transition: padding-left 0.3s ease;
 }
 
-.contentCollapsed {
-  padding-left: 84px; /* 60px (lebar sidebar saat collapsed) + 24px (padding sidebar) */
+.contentFull {
+  padding-left: 24px; /* Reset padding kiri saat full */
 }
 
 @media (max-width: 992px) {
@@ -21,17 +25,15 @@
 
   .content {
     padding: 16px;
-    padding-left: 16px;
   }
 
-  .contentCollapsed {
-    padding-left: 16px;
+  .contentFull {
+    padding: 16px;
   }
 }
 
 @media (max-width: 576px) {
   .content {
     padding: 12px;
-    padding-left: 12px;
   }
 }

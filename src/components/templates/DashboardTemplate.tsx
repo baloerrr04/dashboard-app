@@ -16,13 +16,13 @@ const DashboardTemplate: React.FC<DashboardTemplateProps> = ({ children }) => {
   return (
     <Layout>
       <Sidebar
-        onSearch={(query) => console.log("Search query:", query)}
+        onSearch={(query: any) => console.log("Search query:", query)}
         collapsed={collapsed}
         onCollapse={setCollapsed}
       />
-      <Layout className={styles.layout}>
+      <Layout className={`${styles.layout} ${collapsed ? styles.layoutFull : ''}`}>
         <TopHeader collapsed={collapsed} onCollapse={setCollapsed} />
-        <Content className={`${styles.content} ${collapsed ? styles.contentCollapsed : ''}`}>
+        <Content className={`${styles.content} ${collapsed ? styles.contentFull : ''}`}>
           {children}
         </Content>
       </Layout>

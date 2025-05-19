@@ -1,6 +1,7 @@
-import { Form, Button } from 'antd';
-import Input from '../atoms/Input';
-import styles from '../styles/SearchForm.module.css';
+import { Form, Button } from "antd";
+import Input from "../atoms/Input";
+import styles from "../styles/SearchForm.module.css";
+import { PlusOutlined } from "@ant-design/icons";
 
 interface SearchFormProps {
   onSearch: (query: string) => void;
@@ -19,9 +20,11 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
         <Input placeholder="Search..." />
       </Form.Item>
       <Form.Item className={styles.formItem}>
-        <Button type="primary" htmlType="submit" className={styles.searchButton}>
-          Search
-        </Button>
+        <Button
+          type="primary"
+          className={styles.addButton}
+          icon={<PlusOutlined />}
+        />
       </Form.Item>
     </Form>
   );

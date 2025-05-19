@@ -1,11 +1,11 @@
 import { Card, Table, Badge } from 'antd';
 import Button from '../atoms/Button';
-import Input from '../atoms/Input';
 import Text from '../atoms/Text';
 import RangePicker from '../atoms/RangePicker';
-import { SearchOutlined, MoreOutlined, PlusOutlined, DeleteOutlined } from '@ant-design/icons';
+import { MoreOutlined, PlusOutlined, DeleteOutlined } from '@ant-design/icons';
 import TableActions from '../molecules/TableActions';
 import styles from '../styles/DataTable.module.css';
+import Search from '../atoms/Search';
 
 interface TableData {
   key: string;
@@ -67,12 +67,7 @@ const DataTable: React.FC<DataTableProps> = ({ dataSource, selectedRowKeys}) => 
     }
     extra={
       <div className={styles.extraContainer}>
-        <Input
-          placeholder="Search"
-          prefix={<SearchOutlined />}
-          style={{ width: 200 }}
-          className={styles.searchInput}
-        />
+        <Search/>
         <RangePicker className={styles.rangePicker} />
         <Button type="primary" className={styles.addButton} icon={<PlusOutlined />}>
           Add Data

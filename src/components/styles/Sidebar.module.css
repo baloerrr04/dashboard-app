@@ -2,16 +2,18 @@
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-height: 100vh;
-  width: 300px;
   position: fixed;
   top: 0;
   left: 0;
+  overflow: hidden;
 }
 
 .logo {
   padding: 16px;
   display: flex;
   align-items: center;
+  height: 64px;
+  box-sizing: border-box;
 }
 
 .logoIcon {
@@ -22,6 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .logoText {
@@ -37,19 +40,22 @@
 }
 
 .searchContainer {
-  padding: 16px 16px 16px 16px;
+  padding: 5px;
 }
 
 .menuContainer {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 200px); /* Sesuaikan dengan tinggi logo, search, dan logout */
+  height: calc(100vh - 200px); /* Adjusted for logo, search, and logout */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .sectionTitle {
   padding: 4px 16px;
   font-size: 12px;
   color: #6b7280;
+  white-space: nowrap;
 }
 
 .menuItem {
@@ -58,6 +64,7 @@
   padding: 8px 16px;
   color: #4b5563;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .menuItem:hover {
@@ -68,21 +75,25 @@
   background-color: #f0fdf4;
   border-left: 4px solid #10b981;
   color: #10b981;
+  padding-left: 12px; /* Adjust padding to accommodate border */
 }
 
 .menuIcon {
   margin-right: 8px;
+  flex-shrink: 0;
 }
 
 .divider {
-  margin: 8px 16px;
+  margin: 8px 0;
   background-color: #e5e7eb;
+  width: 100%;
 }
 
 .logout {
   margin-top: auto;
   padding: 16px;
   color: #ef4444;
+  border-top: 1px solid #e5e7eb;
 }
 
 .logoutLink {
@@ -91,6 +102,7 @@
   padding: 8px 0;
   color: #ef4444;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .logoutLink:hover {
@@ -99,18 +111,14 @@
 
 .logoutIcon {
   margin-right: 8px;
+  flex-shrink: 0;
 }
 
-/* Media Queries untuk Responsif */
+/* Media Queries for Responsive Design */
 @media (max-width: 992px) {
-  .sidebar {
-    width: 200px;
-    position: absolute;
-    z-index: 1000;
-  }
-
   .logo {
     padding: 12px;
+    height: 52px;
   }
 
   .logoIcon {
@@ -132,6 +140,10 @@
     font-size: 14px;
   }
 
+  .menuItemActive {
+    padding-left: 8px;
+  }
+
   .sectionTitle {
     padding: 4px 12px;
     font-size: 11px;
@@ -143,13 +155,13 @@
 }
 
 @media (max-width: 576px) {
-  .sidebar {
-    width: 180px;
-  }
-
   .menuItem {
     padding: 4px 10px;
     font-size: 13px;
+  }
+
+  .menuItemActive {
+    padding-left: 6px;
   }
 
   .sectionTitle {
@@ -159,5 +171,6 @@
 
   .logo {
     padding: 10px;
+    height: 48px;
   }
 }

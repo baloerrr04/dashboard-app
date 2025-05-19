@@ -1,12 +1,12 @@
 .searchInput {
   border: 1px solid #d9d9d9;
-  padding: 8px;
+  padding: 5px;
   border-radius: 4px;
-  width: 100%;
+  width: 100px;
+  margin-right: 5px;
 }
 
 .searchInput:focus {
   outline: none;
-  border-color: #2563eb;
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }

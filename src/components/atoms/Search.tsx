@@ -1,11 +1,18 @@
 import React from 'react';
 import styles from '../styles/Search.module.css';
+import { Input } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 
-const Search: React.FC = () => (
-  <input
-    type="search"
-    className={styles.searchInput}
+interface SearchProps {
+  prefix?: React.ReactNode;
+}
+
+const Search: React.FC<SearchProps> = () => (
+  <Input
     placeholder="Search"
+    prefix={<SearchOutlined />}
+    style={{ width: 200 }}
+    className={styles.searchInput}
   />
 );
 
