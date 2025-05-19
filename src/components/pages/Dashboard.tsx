@@ -1,17 +1,12 @@
 import { useState } from 'react';
-import { Row, Col, Typography } from 'antd';
-import Select from '../atoms/Select';
-import Button from '../atoms/Button';
-import { PlusOutlined } from '@ant-design/icons';
+import { Row, Col} from 'antd';
 import StatsCard from '../molecules/StatsCard';
 import AreaChartCard from '../organisms/AreaChartedCard';
 import GaugeChartCard from '../organisms/GaugeChartCard';
 import DataTable from '../organisms/DataTable';
-import RangePicker from '../atoms/RangePicker';
 import DashboardTemplate from '../templates/DashboardTemplate';
 import styles from '../styles/Dashboard.module.css';
 
-const { Title } = Typography;
 
 const areaChartData = [
   { date: '12/10/2024', value: 50 },
