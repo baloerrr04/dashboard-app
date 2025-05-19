@@ -1,5 +1,5 @@
 import { Card, Badge } from "antd";
-import styles from "../styles/StatsCard.module.css";
+import styles from "./styles/StatsCard.module.css";
 import { JSX } from "react";
 import Button from "../atoms/Button";
 import { MoreOutlined } from "@ant-design/icons";

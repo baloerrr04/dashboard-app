@@ -1,6 +1,6 @@
 import { Layout, Divider } from 'antd';
 import { MenuOutlined, BellOutlined, UserOutlined } from '@ant-design/icons';
-import styles from '../styles/TopHeader.module.css';
+import styles from './styles/TopHeader.module.css';
 import RangePicker from '../atoms/RangePicker';
 import Select from '../atoms/Select';
 import Button from '../atoms/Button';

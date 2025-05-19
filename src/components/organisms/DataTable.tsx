@@ -4,7 +4,7 @@ import Text from '../atoms/Text';
 import RangePicker from '../atoms/RangePicker';
 import { MoreOutlined, PlusOutlined, DeleteOutlined } from '@ant-design/icons';
 import TableActions from '../molecules/TableActions';
-import styles from '../styles/DataTable.module.css';
+import styles from './styles/DataTable.module.css';
 import Search from '../atoms/Search';
 
 interface TableData {

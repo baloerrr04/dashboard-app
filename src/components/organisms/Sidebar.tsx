@@ -1,7 +1,7 @@
 import { Layout, Divider } from "antd";
 import { Link, useLocation } from "react-router-dom";
 import SearchForm from "../molecules/SearchForm";
-import styles from '../styles/Sidebar.module.css';
+import styles from './styles/Sidebar.module.css';
 import { JSX } from "react";
 
 const { Sider } = Layout;

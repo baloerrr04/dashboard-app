@@ -1,7 +1,7 @@
 import { Card } from 'antd';
 import { AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area } from 'recharts';
 import RangePicker from '../atoms/RangePicker';
-import styles from '../styles/AreaChartCard.module.css';
+import styles from './styles/AreaChartCard.module.css';
 
 interface AreaChartData {
   date: string;

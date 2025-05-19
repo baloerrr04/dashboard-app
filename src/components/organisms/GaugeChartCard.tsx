@@ -1,7 +1,7 @@
 import { Card, Progress } from 'antd';
 import Badge from '../atoms/Badge';
 import RangePicker from '../atoms/RangePicker';
-import styles from '../styles/GaugeChartCard.module.css';
+import styles from './styles/GaugeChartCard.module.css';
 
 const GaugeChartCard: React.FC = () => (
   <Card

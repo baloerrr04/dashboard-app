@@ -1,6 +1,6 @@
 import { Form, Button } from "antd";
 import Input from "../atoms/Input";
-import styles from "../styles/SearchForm.module.css";
+import styles from "./styles/SearchForm.module.css";
 import { PlusOutlined } from "@ant-design/icons";
 
 interface SearchFormProps {
