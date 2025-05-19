@@ -1,29 +1,33 @@
-import { Layout, Typography} from 'antd';
-import { ReactNode } from 'react';
-import Sidebar from '../organisms/Sidebar';
+import { Layout } from 'antd';
 import TopHeader from '../organisms/TopHeader';
+import Sidebar from '../organisms/Sidebar';
+import styles from '../styles/DashboardTemplate.module.css';
+import { useState } from 'react';
 
 const { Content } = Layout;
-const { Title } = Typography;
 
 interface DashboardTemplateProps {
-  children: ReactNode;
-  onSearch: (query: string) => void;
+  children: React.ReactNode;
 }
 
-const DashboardTemplate: React.FC<DashboardTemplateProps> = ({ children, onSearch }) => (
-  <Layout className="min-h-screen">
-    <Sidebar onSearch={onSearch} />
+const DashboardTemplate: React.FC<DashboardTemplateProps> = ({ children }) => {
+  const [collapsed, setCollapsed] = useState(false);
+
+  return (
     <Layout>
-      <TopHeader />
-      <Content className="p-6 bg-gray-100">
-        <div className="mb-4 items-center">
-          <Title level={5} className="m-0">Dashboard</Title>
+      <Sidebar
+        onSearch={(query) => console.log("Search query:", query)}
+        collapsed={collapsed}
+        onCollapse={setCollapsed}
+      />
+      <Layout className={styles.layout}>
+        <TopHeader collapsed={collapsed} onCollapse={setCollapsed} />
+        <Content className={`${styles.content} ${collapsed ? styles.contentCollapsed : ''}`}>
           {children}
-        </div>
-      </Content>
+        </Content>
+      </Layout>
     </Layout>
-  </Layout>
-);
+  );
+};
 
 export default DashboardTemplate;

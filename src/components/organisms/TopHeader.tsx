@@ -1,23 +1,43 @@
-import { Layout } from 'antd';
-import Button from '../atoms/Button';
-import Text from '../atoms/Text';
-import { MoreOutlined, ClockCircleOutlined, BellOutlined } from '@ant-design/icons';
+import { Layout, Dropdown, Menu, Badge, Avatar } from 'antd';
+import { UserOutlined, DownOutlined, BellOutlined, MenuOutlined } from '@ant-design/icons';
+import styles from '../styles/TopHeader.module.css';
 
 const { Header } = Layout;
 
-const TopHeader: React.FC = () => (
-  <Header className="bg-white px-4 flex items-center justify-between shadow-sm h-14">
-    <div className="flex items-center">
-      <Button type="text" icon={<MoreOutlined />} />
-      <span className="ml-2 font-semibold">PT. ElectroIndo Inti Dinamika</span>
-    </div>
-    <div className="flex items-center">
-      <Text className="mr-4 text-gray-500">Thu, 10 Apr 2025 09:28:05</Text>
-      <Button type="text" icon={<ClockCircleOutlined />} className="mr-2" />
-      <Button type="text" icon={<BellOutlined />} className="mr-2" />
-      <div className="w-8 h-8 bg-blue-500 rounded-full" />
-    </div>
-  </Header>
-);
+interface TopHeaderProps {
+  collapsed: boolean;
+  onCollapse: (collapsed: boolean) => void;
+}
+
+const TopHeader: React.FC<TopHeaderProps> = ({ collapsed, onCollapse }) => {
+  const menu = (
+    <Menu>
+      <Menu.Item key="1">Profile</Menu.Item>
+      <Menu.Item key="2">Settings</Menu.Item>
+      <Menu.Item key="3">Logout</Menu.Item>
+    </Menu>
+  );
+
+  return (
+    <Header className={styles.header}>
+      <div className={styles.leftSection}>
+        <MenuOutlined className={styles.toggleIcon} onClick={() => onCollapse(!collapsed)} />
+        <div className={styles.title}>Dashboard</div>
+      </div>
+      <div className={styles.actions}>
+        <Badge count={3} className={styles.notification}>
+          <BellOutlined className={styles.notificationIcon} />
+        </Badge>
+        <Dropdown overlay={menu}>
+          <div className={styles.userDropdown}>
+            <Avatar icon={<UserOutlined />} className={styles.avatar} />
+            <span className={styles.userName}>Admin</span>
+            <DownOutlined className={styles.dropdownIcon} />
+          </div>
+        </Dropdown>
+      </div>
+    </Header>
+  );
+};
 
 export default TopHeader;

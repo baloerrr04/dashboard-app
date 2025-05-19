@@ -1,6 +1,7 @@
 import { Button as AntdButton } from 'antd';
 import { ButtonProps as AntdButtonProps } from 'antd';
 import { ReactNode } from 'react';
+import styles from '../styles/Button.module.css';
 
 interface ButtonProps extends Omit<AntdButtonProps, 'type'> {
   type?: 'primary' | 'default' | 'text' | 'link';
@@ -16,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({ type, icon, children, size, danger, onC
     size={size}
     danger={danger}
     onClick={onClick}
-    className={className}
+    className={`${styles.button} ${type ? styles[type] : ''} ${danger ? styles.danger : ''} ${className || ''}`}
   >
     {children}
   </AntdButton>

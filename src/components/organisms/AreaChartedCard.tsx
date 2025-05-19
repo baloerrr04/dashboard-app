@@ -1,6 +1,7 @@
 import { Card } from 'antd';
 import { AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area } from 'recharts';
 import RangePicker from '../atoms/RangePicker';
+import styles from '../styles/AreaChartCard.module.css';
 
 interface AreaChartData {
   date: string;
@@ -15,12 +16,12 @@ const AreaChartCard: React.FC<AreaChartCardProps> = ({ data }) => (
   <Card
     title={
       <div>
-        <div className="font-medium">Project Graph</div>
-        <div className="text-xs text-gray-500">This is a long chart description</div>
+        <div className={styles.cardTitle}>Project Graph</div>
+        <div className={styles.cardSubtitle}>This is a long chart description</div>
       </div>
     }
     extra={<RangePicker size="small" />}
-    className="p-4"
+    className={styles.card}
   >
     <div style={{ height: 230 }}>
       <ResponsiveContainer width="100%" height="100%">

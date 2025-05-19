@@ -1,21 +1,22 @@
 import { Card, Progress } from 'antd';
 import Badge from '../atoms/Badge';
 import RangePicker from '../atoms/RangePicker';
+import styles from '../styles/GaugeChartCard.module.css';
 
 const GaugeChartCard: React.FC = () => (
   <Card
     title={
       <div>
-        <div className="font-medium">Project Graph</div>
-        <div className="text-xs text-gray-500">This is a long chart description</div>
+        <div className={styles.cardTitle}>Project Graph</div>
+        <div className={styles.cardSubtitle}>This is a long chart description</div>
       </div>
     }
     extra={<RangePicker size="small" />}
-    className="p-4"
+    className={styles.card}
   >
-    <div className="flex justify-center items-center h-[230px]">
-      <div className="text-center">
-        <div className="relative">
+    <div className={styles.chartContainer}>
+      <div className={styles.chartContent}>
+        <div className={styles.progressWrapper}>
           <Progress
             type="dashboard"
             percent={65}
@@ -27,11 +28,9 @@ const GaugeChartCard: React.FC = () => (
               '100%': '#EF4444',
             }}
           />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="text-xl font-bold">65 km/h</div>
-          </div>
+          <div className={styles.progressCenter}></div>
         </div>
-        <div className="mt-4 flex justify-center space-x-4">
+        <div className={styles.badgeContainer}>
           <Badge color="green" text="Green" />
           <Badge color="yellow" text="Yellow" />
           <Badge color="red" text="Green" />

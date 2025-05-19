@@ -1,0 +1,43 @@
+.header {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.rangePicker {
+  margin-right: 8px;
+}
+
+.select {
+  margin-right: 8px;
+}
+
+.addButton {
+  background-color: #10b981;
+}
+
+.statsRow {
+  margin-bottom: 24px;
+}
+
+.chartRow {
+  margin-bottom: 24px;
+}
+
+.footer {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: #6b7280;
+}

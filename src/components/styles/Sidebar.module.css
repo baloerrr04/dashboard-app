@@ -1,0 +1,163 @@
+.sidebar {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  background-color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoText {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.logoTitle {
+  margin-left: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.searchContainer {
+  padding: 16px 16px 16px 16px;
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 200px); /* Sesuaikan dengan tinggi logo, search, dan logout */
+}
+
+.sectionTitle {
+  padding: 4px 16px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  color: #4b5563;
+  text-decoration: none;
+}
+
+.menuItem:hover {
+  background-color: #f3f4f6;
+}
+
+.menuItemActive {
+  background-color: #f0fdf4;
+  border-left: 4px solid #10b981;
+  color: #10b981;
+}
+
+.menuIcon {
+  margin-right: 8px;
+}
+
+.divider {
+  margin: 8px 16px;
+  background-color: #e5e7eb;
+}
+
+.logout {
+  margin-top: auto;
+  padding: 16px;
+  color: #ef4444;
+}
+
+.logoutLink {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  color: #ef4444;
+  text-decoration: none;
+}
+
+.logoutLink:hover {
+  background-color: #fef2f2;
+}
+
+.logoutIcon {
+  margin-right: 8px;
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+  }
+
+  .logo {
+    padding: 12px;
+  }
+
+  .logoIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logoText {
+    font-size: 14px;
+  }
+
+  .logoTitle {
+    font-size: 16px;
+    margin-left: 6px;
+  }
+
+  .menuItem {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .sectionTitle {
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+
+  .logout {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .menuItem {
+    padding: 4px 10px;
+    font-size: 13px;
+  }
+
+  .sectionTitle {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+
+  .logo {
+    padding: 10px;
+  }
+}

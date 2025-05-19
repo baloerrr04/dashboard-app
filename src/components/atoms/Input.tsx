@@ -1,6 +1,7 @@
 import { Input as AntdInput } from 'antd';
 import { InputProps as AntdInputProps } from 'antd';
 import { ReactNode } from 'react';
+import styles from '../styles/Input.module.css';
 
 interface InputProps extends AntdInputProps {
   prefix?: ReactNode;
@@ -17,7 +18,7 @@ const Input: React.FC<InputProps> = ({ prefix, placeholder, value, onChange, cla
     placeholder={placeholder}
     value={value}
     onChange={onChange}
-    className={className}
+    className={`${styles.input} ${className || ''}`}
     style={style}
   />
 );

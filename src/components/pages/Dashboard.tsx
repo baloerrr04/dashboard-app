@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Typography } from 'antd';
 import Select from '../atoms/Select';
 import Button from '../atoms/Button';
 import { PlusOutlined } from '@ant-design/icons';
@@ -7,8 +7,11 @@ import StatsCard from '../molecules/StatsCard';
 import AreaChartCard from '../organisms/AreaChartedCard';
 import GaugeChartCard from '../organisms/GaugeChartCard';
 import DataTable from '../organisms/DataTable';
-import DashboardTemplate from '../templates/DashboardTemplate';
 import RangePicker from '../atoms/RangePicker';
+import DashboardTemplate from '../templates/DashboardTemplate';
+import styles from '../styles/Dashboard.module.css';
+
+const { Title } = Typography;
 
 const areaChartData = [
   { date: '12/10/2024', value: 50 },
@@ -27,21 +30,12 @@ const tableData = [
 const Dashboard: React.FC = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([]);
 
-  const handleSearch = (query: string) => {
-    console.log('Search:', query);
-  };
-
   return (
-    <DashboardTemplate onSearch={handleSearch}>
-      <div className="flex items-center">
-        <RangePicker className="mr-2" />
-        <Select defaultValue="Setting A" style={{ width: 130 }} className="mr-2">
-          <Select.Option value="settingA">Setting A</Select.Option>
-          <Select.Option value="settingB">Setting B</Select.Option>
-        </Select>
-        <Button type="primary" icon={<PlusOutlined />} className="bg-green-500" />
+    <DashboardTemplate >
+      <div className={styles.header}>
+        
       </div>
-      <Row gutter={16} className="mb-6">
+      <Row gutter={16} className={styles.statsRow}>
         <Col span={6}>
           <StatsCard
             title="Ongoing Project"
@@ -49,8 +43,8 @@ const Dashboard: React.FC = () => {
             icon={<path d="M22 12h-4l-3 9L9 3l-3 9H2" />}
             badgeColor="red"
             badgeText="9.23%"
-            iconBgColor="bg-blue-100"
-            iconColor="#3B82F6"
+            iconBgColor="#bfdbfe"
+            iconColor="#3b82f6"
           />
         </Col>
         <Col span={6}>
@@ -60,8 +54,8 @@ const Dashboard: React.FC = () => {
             icon={<><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></>}
             badgeColor="green"
             badgeText="8.15%"
-            iconBgColor="bg-yellow-100"
-            iconColor="#F59E0B"
+            iconBgColor="#fefcbf"
+            iconColor="#f59e0b"
           />
         </Col>
         <Col span={6}>
@@ -71,8 +65,8 @@ const Dashboard: React.FC = () => {
             icon={<><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><polyline points="10 9 9 9 8 9" /></>}
             badgeColor="green"
             badgeText="8.15%"
-            iconBgColor="bg-purple-100"
-            iconColor="#8B5CF6"
+            iconBgColor="#e9d5ff"
+            iconColor="#8b5cf6"
           />
         </Col>
         <Col span={6}>
@@ -82,12 +76,12 @@ const Dashboard: React.FC = () => {
             icon={<><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></>}
             badgeColor="green"
             badgeText="9.15%"
-            iconBgColor="bg-green-100"
-            iconColor="#10B981"
+            iconBgColor="#d1fae5"
+            iconColor="#10b981"
           />
         </Col>
       </Row>
-      <Row gutter={16} className="mb-6">
+      <Row gutter={16} className={styles.chartRow}>
         <Col span={12}>
           <AreaChartCard data={areaChartData} />
         </Col>
@@ -100,7 +94,7 @@ const Dashboard: React.FC = () => {
         selectedRowKeys={selectedRowKeys}
         onRowSelectionChange={setSelectedRowKeys}
       />
-      <div className="mt-4 text-center text-xs text-gray-500">
+      <div className={styles.footer}>
         Copyright © 2023 PT. ElectroIndo Inti Dinamika
       </div>
     </DashboardTemplate>

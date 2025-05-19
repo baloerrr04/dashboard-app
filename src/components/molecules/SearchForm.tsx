@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import { Form, Button } from 'antd';
 import Input from '../atoms/Input';
-import { SearchOutlined } from '@ant-design/icons';
+import styles from '../styles/SearchForm.module.css';
 
 interface SearchFormProps {
   onSearch: (query: string) => void;
-  width?: number;
 }
 
-const SearchForm: React.FC<SearchFormProps> = ({ onSearch, width }) => {
-  const [query, setQuery] = useState('');
+const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
+  const [form] = Form.useForm();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSearch(query);
+  const handleSubmit = (values: { query: string }) => {
+    onSearch(values.query);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Input
-        prefix={<SearchOutlined className="text-gray-400" />}
-        placeholder="Search"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        style={{ width }}
-        className="border-gray-300"
-      />
-    </form>
+    <Form form={form} onFinish={handleSubmit} className={styles.form}>
+      <Form.Item name="query" className={styles.formItem}>
+        <Input placeholder="Search..." />
+      </Form.Item>
+      <Form.Item className={styles.formItem}>
+        <Button type="primary" htmlType="submit" className={styles.searchButton}>
+          Search
+        </Button>
+      </Form.Item>
+    </Form>
   );
 };
 

@@ -1,0 +1,42 @@
+.card {
+  padding: 16px;
+}
+
+.cardTitle {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.cardSubtitle {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.chartContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 230px;
+}
+
+.chartContent {
+  text-align: center;
+}
+
+.progressWrapper {
+  position: relative;
+}
+
+.progressCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.badgeContainer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}

@@ -1,0 +1,22 @@
+.rangePicker {
+  width: 100%;
+}
+
+.rangePicker :global(.ant-picker) {
+  border-radius: 6px;
+  border-color: #d1d5db;
+}
+
+.rangePicker :global(.ant-picker:hover),
+.rangePicker :global(.ant-picker-focused) {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.rangePicker :global(.ant-picker-input > input) {
+  color: #374151;
+}
+
+.rangePicker :global(.ant-picker-suffix) {
+  color: #6b7280;
+}

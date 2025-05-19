@@ -1,11 +1,11 @@
-import { Card, Table } from 'antd';
+import { Card, Table, Badge } from 'antd';
 import Button from '../atoms/Button';
 import Input from '../atoms/Input';
 import Text from '../atoms/Text';
 import RangePicker from '../atoms/RangePicker';
 import { SearchOutlined, MoreOutlined, PlusOutlined, DeleteOutlined } from '@ant-design/icons';
 import TableActions from '../molecules/TableActions';
-import Badge from '../atoms/Badge';
+import styles from '../styles/DataTable.module.css';
 
 interface TableData {
   key: string;
@@ -37,7 +37,7 @@ const columns = [
     dataIndex: 'cell3',
     key: 'cell3',
     render: () => (
-      <Button type="link" className="p-0 text-blue-500">
+      <Button type="link" className={styles.badgeButton}>
         Badge
       </Button>
     ),
@@ -57,35 +57,35 @@ const columns = [
   },
 ];
 
-const DataTable: React.FC<DataTableProps> = ({ dataSource, selectedRowKeys }) => (
+const DataTable: React.FC<DataTableProps> = ({ dataSource, selectedRowKeys}) => (
   <Card
     title={
       <div>
-        <div className="font-medium">Title Table</div>
-        <div className="text-xs text-gray-500">Data table information</div>
+        <div className={styles.cardTitle}>Title Table</div>
+        <div className={styles.cardSubtitle}>Data table information</div>
       </div>
     }
     extra={
-      <div className="flex items-center">
+      <div className={styles.extraContainer}>
         <Input
           placeholder="Search"
           prefix={<SearchOutlined />}
           style={{ width: 200 }}
-          className="mr-2 border-gray-300"
+          className={styles.searchInput}
         />
-        <RangePicker className="mr-2" />
-        <Button type="primary" className="bg-green-500" icon={<PlusOutlined />}>
+        <RangePicker className={styles.rangePicker} />
+        <Button type="primary" className={styles.addButton} icon={<PlusOutlined />}>
           Add Data
         </Button>
         <Button type="text" icon={<MoreOutlined />} />
       </div>
     }
-    className="p-4"
+    className={styles.card}
   >
-    <div className="mb-2">
+    <div className={styles.selectionInfo}>
       {selectedRowKeys.length > 0 && (
-        <div className="flex items-center mb-2">
-          <Text className="mr-2">
+        <div className={styles.selectionActions}>
+          <Text className={styles.selectedText}>
             {selectedRowKeys.length} selected of 1000 data
           </Text>
           <Button danger icon={<DeleteOutlined />} size="small">
