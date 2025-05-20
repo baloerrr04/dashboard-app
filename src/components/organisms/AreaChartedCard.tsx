@@ -1,7 +1,5 @@
-import CustomCard  from '../atoms/Card';
 import { AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area } from 'recharts';
-import RangePicker from '../atoms/RangePicker';
-import styles from './styles/AreaChartCard.module.css';
+import ChartCard from '../molecules/ChartCard';
 
 interface AreaChartData {
   date: string;
@@ -13,19 +11,8 @@ interface AreaChartCardProps {
 }
 
 const AreaChartCard: React.FC<AreaChartCardProps> = ({ data }) => (
-  <CustomCard
-    title={
-      <div>
-        <div className={styles.cardTitle}>Project Graph</div>
-        <div className={styles.cardSubtitle}>This is a long chart description</div>
-      </div>
-    }
-    extra={<RangePicker size="small" />}
-    className={styles.card}
-    padding='16px'
-    
-  >
-    <div style={{ height: 230 }}>
+
+  <ChartCard>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           data={data}
@@ -50,8 +37,8 @@ const AreaChartCard: React.FC<AreaChartCardProps> = ({ data }) => (
           />
         </AreaChart>
       </ResponsiveContainer>
-    </div>
-  </CustomCard>
+  </ChartCard>
+    
 );
 
 export default AreaChartCard;

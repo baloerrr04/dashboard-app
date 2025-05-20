@@ -3,21 +3,11 @@ import Badge from '../atoms/Badge';
 import RangePicker from '../atoms/RangePicker';
 import styles from './styles/GaugeChartCard.module.css';
 import CustomCard  from '../atoms/Card';
+import ChartCard from '../molecules/ChartCard';
 
 
 const GaugeChartCard: React.FC = () => (
-  <CustomCard
-    title={
-      <div>
-        <div className={styles.cardTitle}>Project Graph</div>
-        <div className={styles.cardSubtitle}>This is a long chart description</div>
-      </div>
-    }
-    extra={<RangePicker size="small" />}
-    className={styles.card}
-    padding='16px'
-    
-  >
+ <ChartCard>
     <div className={styles.chartContainer}>
       <div className={styles.chartContent}>
         <div className={styles.progressWrapper}>
@@ -41,7 +31,7 @@ const GaugeChartCard: React.FC = () => (
         </div>
       </div>
     </div>
-  </CustomCard>
+ </ChartCard>
 );
 
 export default GaugeChartCard;
