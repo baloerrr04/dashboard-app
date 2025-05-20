@@ -1,32 +1,22 @@
-import { Form, Button } from "antd";
-import Input from "../atoms/Input";
+import { Button } from "antd";
 import styles from "./styles/SearchForm.module.css";
 import { PlusOutlined } from "@ant-design/icons";
+import Search from "../atoms/Search";
 
 interface SearchFormProps {
   onSearch: (query: string) => void;
 }
 
-const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
-  const [form] = Form.useForm();
-
-  const handleSubmit = (values: { query: string }) => {
-    onSearch(values.query);
-  };
+const SearchForm: React.FC<SearchFormProps> = () => {
 
   return (
-    <Form form={form} onFinish={handleSubmit} className={styles.form}>
-      <Form.Item name="query" className={styles.formItem}>
-        <Input placeholder="Search..." />
-      </Form.Item>
-      <Form.Item className={styles.formItem}>
-        <Button
-          type="primary"
-          className={styles.addButton}
-          icon={<PlusOutlined />}
-        />
-      </Form.Item>
-    </Form>
+    <div className={styles.form}>
+      <Search />
+      <Button
+        type="primary"
+        icon={<PlusOutlined />}
+      />
+    </div>
   );
 };
 

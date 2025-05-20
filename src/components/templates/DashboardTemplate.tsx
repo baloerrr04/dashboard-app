@@ -1,7 +1,7 @@
 import { Layout } from 'antd';
 import TopHeader from '../organisms/TopHeader';
 import Sidebar from '../organisms/Sidebar';
-import styles from '../styles/DashboardTemplate.module.css';
+import styles from './styles/DashboardTemplate.module.css';
 import { useState } from 'react';
 
 const { Content } = Layout;

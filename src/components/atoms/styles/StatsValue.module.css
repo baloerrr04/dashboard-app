@@ -1,0 +1,10 @@
+.value {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@media (max-width: 576px) {
+  .value {
+    font-size: 18px;
+  }
+}

@@ -1,4 +1,4 @@
-import { Card } from 'antd';
+import CustomCard  from '../atoms/Card';
 import { AreaChart, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area } from 'recharts';
 import RangePicker from '../atoms/RangePicker';
 import styles from './styles/AreaChartCard.module.css';
@@ -13,7 +13,7 @@ interface AreaChartCardProps {
 }
 
 const AreaChartCard: React.FC<AreaChartCardProps> = ({ data }) => (
-  <Card
+  <CustomCard
     title={
       <div>
         <div className={styles.cardTitle}>Project Graph</div>
@@ -22,6 +22,8 @@ const AreaChartCard: React.FC<AreaChartCardProps> = ({ data }) => (
     }
     extra={<RangePicker size="small" />}
     className={styles.card}
+    padding='16px'
+    
   >
     <div style={{ height: 230 }}>
       <ResponsiveContainer width="100%" height="100%">
@@ -49,7 +51,7 @@ const AreaChartCard: React.FC<AreaChartCardProps> = ({ data }) => (
         </AreaChart>
       </ResponsiveContainer>
     </div>
-  </Card>
+  </CustomCard>
 );
 
 export default AreaChartCard;

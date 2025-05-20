@@ -1,0 +1,12 @@
+:root {
+  --color-primary: #01B763;
+  --color-secondary: #1d4ed8;
+  --color-danger: #ff4d4f;
+  --color-card-bg: #fff;
+  --color-card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  background-color: var(--color-card-bg);
+  box-shadow: 0 1px 3px var(--color-card-shadow);
+}

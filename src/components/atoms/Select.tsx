@@ -1,6 +1,6 @@
 import { Select as AntdSelect } from 'antd';
 import type { SelectProps as AntdSelectProps } from 'antd';
-import styles from '../styles/Select.module.css';
+import styles from './styles/Select.module.css';
 
 const { Option } = AntdSelect;
 

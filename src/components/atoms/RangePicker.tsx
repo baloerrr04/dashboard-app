@@ -1,6 +1,6 @@
 import { DatePicker } from 'antd';
 import { RangePickerProps as AntdRangePickerProps } from 'antd/es/date-picker';
-import styles from '../styles/RangePicker.module.css';
+import styles from './styles/RangePicker.module.css';
 
 const { RangePicker: AntdRangePicker } = DatePicker;
 

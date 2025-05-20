@@ -1,7 +1,7 @@
 import { Button as AntdButton } from 'antd';
 import { ButtonProps as AntdButtonProps } from 'antd';
 import { ReactNode } from 'react';
-import styles from '../styles/Button.module.css';
+import styles from './styles/Button.module.css';
 
 interface ButtonProps extends Omit<AntdButtonProps, 'type'> {
   type?: 'primary' | 'default' | 'text' | 'link';

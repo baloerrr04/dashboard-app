@@ -1,7 +1,7 @@
 import { Input as AntdInput } from 'antd';
 import { InputProps as AntdInputProps } from 'antd';
 import { ReactNode } from 'react';
-import styles from '../styles/Input.module.css';
+import styles from './styles/Input.module.css';
 
 interface InputProps extends AntdInputProps {
   prefix?: ReactNode;

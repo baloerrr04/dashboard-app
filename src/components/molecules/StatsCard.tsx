@@ -1,8 +1,14 @@
-import { Card, Badge } from "antd";
+import { Badge } from "antd";
 import styles from "./styles/StatsCard.module.css";
 import { JSX } from "react";
 import Button from "../atoms/Button";
 import { MoreOutlined } from "@ant-design/icons";
+import IconWrapper from "../atoms/IconWrapper";
+import StatsTitle from "../atoms/StatsTitle";
+import StatsValue from "../atoms/StatsValue";
+import CustomCard from "../atoms/Card"
+import '../../index.css';
+
 
 interface StatsCardProps {
   title: string;
@@ -11,7 +17,6 @@ interface StatsCardProps {
   badgeColor: string;
   badgeText: string;
   iconBgColor: string;
-  iconColor: string;
 }
 
 const StatsCard: React.FC<StatsCardProps> = ({
@@ -21,29 +26,14 @@ const StatsCard: React.FC<StatsCardProps> = ({
   badgeColor,
   badgeText,
   iconBgColor,
-  iconColor,
 }) => (
-  <Card className={styles.card}>
+  <CustomCard >
     <div className={styles.container}>
-      <div
-        className={styles.iconContainer}
-        style={{ backgroundColor: iconBgColor }}
-      >
-        <svg
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="none"
-          stroke={iconColor}
-          strokeWidth="2"
-        >
-          {icon}
-        </svg>
-      </div>
+      <IconWrapper icon={icon} bgColor={iconBgColor} />
       <div>
-        <div className={styles.title}>{title}</div>
+        <StatsTitle text={title} />{" "}
         <div className={styles.valueContainer}>
-          <div className={styles.value}>{value}</div>
+          <StatsValue value={value} />
           <Badge
             count={badgeText}
             style={{
@@ -59,7 +49,7 @@ const StatsCard: React.FC<StatsCardProps> = ({
         <Button type="text" icon={<MoreOutlined />} />
       </div>
     </div>
-  </Card>
+  </CustomCard>
 );
 
 export default StatsCard;

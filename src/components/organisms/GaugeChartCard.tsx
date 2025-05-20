@@ -1,10 +1,12 @@
-import { Card, Progress } from 'antd';
+import { Progress } from 'antd';
 import Badge from '../atoms/Badge';
 import RangePicker from '../atoms/RangePicker';
 import styles from './styles/GaugeChartCard.module.css';
+import CustomCard  from '../atoms/Card';
+
 
 const GaugeChartCard: React.FC = () => (
-  <Card
+  <CustomCard
     title={
       <div>
         <div className={styles.cardTitle}>Project Graph</div>
@@ -13,6 +15,8 @@ const GaugeChartCard: React.FC = () => (
     }
     extra={<RangePicker size="small" />}
     className={styles.card}
+    padding='16px'
+    
   >
     <div className={styles.chartContainer}>
       <div className={styles.chartContent}>
@@ -37,7 +41,7 @@ const GaugeChartCard: React.FC = () => (
         </div>
       </div>
     </div>
-  </Card>
+  </CustomCard>
 );
 
 export default GaugeChartCard;
