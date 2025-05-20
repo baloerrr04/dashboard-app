@@ -1,6 +1,7 @@
 import { Layout } from 'antd';
 import TopHeader from '../organisms/TopHeader';
 import Sidebar from '../organisms/Sidebar';
+import Footer from '../organisms/Footer'; // pastikan ini sudah dibuat
 import styles from './styles/DashboardTemplate.module.css';
 import { useState } from 'react';
 
@@ -22,9 +23,12 @@ const DashboardTemplate: React.FC<DashboardTemplateProps> = ({ children }) => {
       />
       <Layout className={`${styles.layout} ${collapsed ? styles.layoutFull : ''}`}>
         <TopHeader collapsed={collapsed} onCollapse={setCollapsed} />
-        <Content className={`${styles.content} ${collapsed ? styles.contentFull : ''}`}>
-          {children}
-        </Content>
+        <div className={styles.mainContentWrapper}>
+          <Content className={`${styles.content} ${collapsed ? styles.contentFull : ''}`}>
+            {children}
+          </Content>
+          <Footer />
+        </div>
       </Layout>
     </Layout>
   );

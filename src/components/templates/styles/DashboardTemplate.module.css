@@ -12,13 +12,58 @@
   background-color: #f3f4f6;
   min-height: calc(100vh - 64px);
   transition: padding-left 0.3s ease;
+  flex: 1;
 }
 
 .contentFull {
   padding-left: 24px; /* Reset padding kiri saat full */
 }
 
+@media (max-width: 992px) {.layout {
+  margin-left: 200px;
+  transition: margin-left 0.3s ease;
+}
+
+.layoutFull {
+  margin-left: 60px;
+}
+
+.mainContentWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 64px); /* dikurangi tinggi TopHeader */
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+  background-color: #f3f4f6;
+  transition: padding-left 0.3s ease;
+}
+
+.contentFull {
+  padding-left: 24px;
+}
+
+/* Responsive */
 @media (max-width: 992px) {
+  .layout {
+    margin-left: 0;
+  }
+
+  .content,
+  .contentFull {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .content,
+  .contentFull {
+    padding: 12px;
+  }
+}
+
   .layout {
     margin-left: 0;
   }

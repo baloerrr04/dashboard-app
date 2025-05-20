@@ -1,4 +1,4 @@
-import { Card, Table, Badge } from "antd";
+import { Table, Badge } from "antd";
 import CustomCard from "../atoms/Card";
 import TableActions from "../molecules/TableActions";
 import TableSelectionInfo from "../molecules/TableSelectionInfo";
@@ -51,7 +51,7 @@ const columns = [
   },
 ];
 
-const DataTable: React.FC<DataTableProps> = ({ dataSource, selectedRowKeys, onRowSelectionChange }) => (
+const DataTable: React.FC<DataTableProps> = ({ dataSource, selectedRowKeys }) => (
   <CustomCard
     title={
       <div>
@@ -61,7 +61,6 @@ const DataTable: React.FC<DataTableProps> = ({ dataSource, selectedRowKeys, onRo
     }
     extra={<TableToolbar />}
     padding="24px"
-    className={styles.card}
   >
     <div className={styles.selectionInfo}>
       <TableSelectionInfo selectedRowKeys={selectedRowKeys} />

@@ -50,7 +50,6 @@ const Dashboard: React.FC = () => {
 
   return (
     <DashboardTemplate>
-      <div className={styles.header}></div>
       <Row gutter={16} className={styles.statsRow}>
         <Col span={6}>
           <StatsCard
@@ -113,14 +112,13 @@ const Dashboard: React.FC = () => {
           <GaugeChartCard />
         </Col>
       </Row>
+
       <DataTable
         dataSource={tableData}
         selectedRowKeys={selectedRowKeys}
         onRowSelectionChange={setSelectedRowKeys}
       />
-      <div className={styles.footer}>
-        Copyright © 2023 PT. ElectroIndo Inti Dinamika
-      </div>
+
     </DashboardTemplate>
   );
 };

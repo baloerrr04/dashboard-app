@@ -8,37 +8,10 @@
   color: #6b7280;
 }
 
-.extraContainer {
-  display: flex;
-  align-items: center;
-}
 
-.searchInput {
-  margin-right: 8px;
-  border-color: #d1d5db;
-}
-
-.rangePicker {
-  margin-right: 8px;
-}
-
-.addButton {
-  background-color: #10b981;
-  padding: 10px;
-}
 
 .selectionInfo {
   margin-bottom: 8px;
-}
-
-.selectionActions {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.selectedText {
-  margin-right: 8px;
 }
 
 .badgeButton {
