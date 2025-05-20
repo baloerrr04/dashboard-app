@@ -1,7 +1,7 @@
 # Dashboard App
 
 **Deskripsi:**
-Aplikasi dashboard web dibuat untuk ujian teknikal dan belajar dan belajarrrr 🔥
+Aplikasi dashboard web dibuat untuk ujian teknikal dan belajar dan belajarrrr menggunakan pendekatan arsitektur Atomic Design ⚛
 
 **Tanggal Dibuat:** 19 Mei 2025
 
