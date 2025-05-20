@@ -1,54 +1,94 @@
-# React + TypeScript + Vite
+# Dashboard App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Deskripsi:**
+Aplikasi dashboard web dibuat untuk ujian teknikal dan belajar dan belajarrrr 🔥
 
-Currently, two official plugins are available:
+**Tanggal Dibuat:** 19 Mei 2025
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Fitur Utama
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Sidebar Collapsible:** Dapat diperluas atau diperkecil untuk mengatur ruang layar.
+- **Dashboard Statis:** Menampilkan statistik kunci dengan kartu yang tidak dapat dikustomisasi (misalnya total pengguna, pengguna aktif).
+- **Atomic Design:** Struktur komponen mengikuti prinsip Atomic Design (atoms, molecules, organisms, templates).
+- **Antarmuka Modern:** UI bersih dan modern dengan komponen Ant Design dan styling kustom.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## Teknologi
+
+- **Frontend:**
+  - React
+  - Ant Design
+  - TypeScript
+- **Styling:** CSS Modules
+- **Routing:** React Router DOM
+- **Icons:** @ant-design/icons
+- **Build Tools & Package Manager:** Node.js, Yarn
+
+---
+
+## Instalasi
+
+1. **Clone repository:**
+   ```bash
+   git clone https://github.com/username/repository.git
+   ```
+2. **Masuk ke direktori proyek:**
+   ```bash
+   cd repository
+   ```
+3. **Install dependencies:**
+   ```bash
+   yarn install
+   ```
+4. **Jalankan server development:**
+   ```bash
+   yarn start
+   ```
+5. **Buka di browser:**
+   Akses `http://localhost:3000`.
+
+---
+
+## Cara Penggunaan
+
+- **Navigasi Sidebar:** Klik ikon hamburger di header atas untuk memperkecil atau memperluas sidebar. Jelajahi bagian seperti Dashboard, Summary, Role, dll.
+- **Kartu Statistik:** Tampilkan statistik real-time (misalnya total pengguna) dengan badge status (misalnya "Active").
+- **Pencarian:** Masukkan kata kunci di bar pencarian sidebar untuk memfilter konten (integrasi backend dapat berbeda).
+
+---
+
+## Struktur Folder
+
+```text
+project/
+├── src/
+│   ├── atoms/           # Komponen terkecil (misalnya Button)
+│   ├── molecules/       # Komponen gabungan (misalnya SearchForm)
+│   ├── organisms/       # Komponen kompleks (misalnya Sidebar, TopHeader, StatsCard)
+│   ├── templates/       # Template layout (misalnya DashboardTemplate)
+│   ├── App.tsx          # Komponen utama
+│   ├── index.tsx        # Entry point
+│   └── ...
+├── public/              # File statis
+├── package.json         # Dependensi dan skrip
+└── README.md            # Dokumen ini
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Kontribusi
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. Fork repository.
+2. Buat branch baru (`git checkout -b feature-branch`).
+3. Lakukan perubahan dan commit (`git commit -m "Menambahkan fitur baru"`).
+4. Push ke branch (`git push origin feature-branch`).
+5. Buka Pull Request.
+
+---
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah MIT License. Bebas digunakan, dimodifikasi, dan didistribusikan.
