@@ -1,13 +1,12 @@
-import { Progress } from 'antd';
-import Badge from '../atoms/Badge';
-import RangePicker from '../atoms/RangePicker';
-import styles from './styles/GaugeChartCard.module.css';
-import CustomCard  from '../atoms/Card';
-import ChartCard from '../molecules/ChartCard';
-
+import { Progress } from "antd";
+import Badge from "../atoms/Badge";
+import RangePicker from "../atoms/RangePicker";
+import styles from "./styles/GaugeChartCard.module.css";
+import CustomCard from "../atoms/Card";
+import ChartCard from "../molecules/ChartCard";
 
 const GaugeChartCard: React.FC = () => (
- <ChartCard>
+  <ChartCard>
     <div className={styles.chartContainer}>
       <div className={styles.chartContent}>
         <div className={styles.progressWrapper}>
@@ -17,9 +16,9 @@ const GaugeChartCard: React.FC = () => (
             gapDegree={70}
             strokeWidth={8}
             strokeColor={{
-              '0%': '#10B981',
-              '50%': '#F59E0B',
-              '100%': '#EF4444',
+              "0%": "#10B981",
+              "50%": "#F59E0B",
+              "100%": "#EF4444",
             }}
           />
           <div className={styles.progressCenter}></div>
@@ -31,7 +30,7 @@ const GaugeChartCard: React.FC = () => (
         </div>
       </div>
     </div>
- </ChartCard>
+  </ChartCard>
 );
 
 export default GaugeChartCard;
