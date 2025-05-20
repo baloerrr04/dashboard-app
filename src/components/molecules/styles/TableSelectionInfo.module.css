@@ -1,0 +1,11 @@
+
+
+.selectionActions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.selectedText {
+  margin-right: 8px;
+}

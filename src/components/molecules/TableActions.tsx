@@ -1,13 +1,14 @@
 import { Space } from 'antd';
 import Button from '../atoms/Button';
 import { EditOutlined, SettingOutlined, DeleteOutlined } from '@ant-design/icons';
+import styles from './styles/TableActions.module.css';
 
 const TableActions: React.FC = () => (
   <Space size="small">
-    <Button type="primary" size="small" className="bg-blue-400 hover:bg-blue-500">
+    <Button type="primary" size="small" className={styles.buttonEdit}>
       <EditOutlined />
     </Button>
-    <Button type="primary" size="small" className="bg-yellow-400 hover:bg-yellow-500">
+    <Button type="primary" size="small" className={styles.buttonSetting}>
       <SettingOutlined />
     </Button>
     <Button type="primary" size="small" danger>
